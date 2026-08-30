@@ -14,7 +14,7 @@ immediately — no auth header, and providers block direct browser calls anyway.
 
 - The React component posts to `/api/chat` (same origin, key never exposed to
   the browser).
-- A **Netlify Edge Function** (`netlify/edge-functions/chat.js`) holds your real
+- A **Netlify Edge Function** (`netlify/edge-functions/chat.ts`) holds your real
   `OPENROUTER_API_KEY` server-side and forwards the request to OpenRouter.
 - Model is **`z-ai/glm-5.2:free`** — GLM 5.2 on OpenRouter's free tier (rate
   limited, but no cost). Swap models any time via an environment variable, no
@@ -38,7 +38,7 @@ immediately — no auth header, and providers block direct browser calls anyway.
    - *(optional)* `OPENROUTER_MODEL` = a different OpenRouter model id if you
      want to switch away from the free GLM 5.2 endpoint
 4. Deploy. That's it — no other config needed, Netlify auto-detects the Edge
-   Function from `netlify/edge-functions/chat.js` + `netlify.toml`.
+   Function from `netlify/edge-functions/chat.ts` + `netlify.toml`.
 
 ## Run locally
 
