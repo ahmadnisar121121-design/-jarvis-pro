@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[edge_functions]]
+  function = "chat"
+  path = "/api/chat"
+
+# Client-side routing fallback (not strictly needed for this single-page
+# app, but keeps deep links / refreshes from 404ing if routes are added later).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
